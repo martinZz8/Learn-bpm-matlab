@@ -29,7 +29,7 @@ for i_S1 = 1:length(S1)
                 net.trainPrarm.mc = mc(i_mc);
                 net.trainParam.epochs = 1000;
                 net.trainParam.goal = 0.25;
-                net = train(net, Pn, T);
+                [net, tr, Y, E] = train(net, Pn, T);
                 a = sim(net, Pn);
                 
                 %zapis wyniku procentowego trenowania
