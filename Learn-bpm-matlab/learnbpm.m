@@ -77,13 +77,13 @@ for j_lr = 1:length(lr)
     end
 end
 
-mesh(S1, S2, currentPercent1)
-xlabel('S1');
-ylabel('S2');
+mesh(S2, S1, currentPercent1)
+xlabel('S2');
+ylabel('S1');
 zlabel('Percentage');
 title('F1(S1,S2)');
-mesh(lr, mc, currentPercent2)
-xlabel('lr');
-ylabel('mc');
+mesh(mc, lr, currentPercent2)
+xlabel('mc');
+ylabel('lr');
 zlabel('Percentage');
 title('F2(lr,mc)');
