@@ -7,9 +7,9 @@ load 'winequalityred.mat' %zaladowanie pliku z danymi
 
 %deklaracja stalych
 iterate = 0;
-S1 = (8:2:30);
-S2 = (8:2:20);
-lr = [1e-2, 1e-3];
+S1 = (24:1:30);
+S2 = (18:1:20);
+lr = 0.01;
 mc = (0.8:0.1:0.9);
 
 x = length(S1)*length(S2)*length(lr)*length(mc);
@@ -26,7 +26,7 @@ for i_S1 = 1:length(S1)
                 net.divideFcn = 'dividetrain';
                 net.trainParam.lr = lr(i_lr);
                 net.trainParam.mc = mc(i_mc);
-                net.trainParam.epochs = 10000;
+                net.trainParam.epochs = 100000;
                 net.trainParam.goal = 0.25;
                 net.performFcn = 'mse';
                 [net, tr, Y, E] = train(net, Pns, Ts);
